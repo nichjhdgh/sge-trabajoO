@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seguridad y Roles – SGE Wiki</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">📊 <span>SGE</span> Wiki</a>
+      <button class="hamburguesa" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="que-es-sge.html">¿Qué es un SGE?</a></li>
+        <li><a href="instalacion.html">Instalación</a></li>
+        <li><a href="administracion.html">Administración</a></li>
+        <li><a href="seguridad.html">Seguridad</a></li>
+        <li><a href="informes.html">Informes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="../index.html">Inicio</a>
+      <span>›</span>
+      Seguridad y Roles
+    </div>
+  </div>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>🔒 Seguridad y Acceso a la Información</h1>
+      <p>Roles, permisos, grupos y configuración de seguridad en Dolibarr</p>
+    </div>
+  </div>
+
+  <section class="seccion">
+    <div class="container">
+
+      <div class="caja-texto">
+        <h2>🛡️ ¿Por qué es importante la seguridad en un SGE?</h2>
+        <p>Un SGE maneja datos sensibles: clientes, facturas, nóminas, contraseñas... Por eso es fundamental controlar exactamente quién accede a qué. Dolibarr implementa un sistema de <strong>usuarios, grupos y permisos</strong> granulares que permite seguir el principio de <em>mínimo privilegio</em>: cada usuario solo ve y modifica lo que necesita para su trabajo.</p>
+        <div class="alerta-aviso">
+          ⚠️ Una mala gestión de permisos puede exponer datos personales de clientes y empleados, incumpliendo el RGPD (Reglamento General de Protección de Datos).
+        </div>
+      </div>
+
+      <div class="caja-texto">
+        <h2>🔑 Acceso seguro: login y contraseñas</h2>
+        <p>Dolibarr exige usuario y contraseña para acceder. En la pantalla de login vista en la instalación se introduce el usuario <code>admin</code> con la contraseña establecida. Dolibarr guarda las contraseñas cifradas.</p>
+        <p>Los módulos activos en el sistema son los que se muestran en la pantalla de configuración. Al activar el módulo <strong>Terceros</strong> y <strong>Presupuestos</strong> ya aparecen con el engranaje ⚙️ indicando que están operativos. Para crear un usuario nuevo hay que ir a <strong>Herramientas de administración → Usuarios y grupos → Nuevo usuario</strong>.</p>
+        <img src="../img/seg_01_modulos_usuario.png" alt="Vista de módulos CRM y VRM activos con engranajes, y formulario de creación de nuevo usuario interno con sus datos y pestaña de permisos" class="foto-seccion" />
+      </div>
+
+      <div class="caja-texto">
+        <h2>👤 Creación y gestión de usuarios</h2>
+        <p>Al crear un usuario en Dolibarr se rellenan los siguientes campos:</p>
+        <ul>
+          <li><strong>Apellidos y nombre</strong></li>
+          <li><strong>Login</strong>: nombre de usuario para iniciar sesión</li>
+          <li><strong>Administrador de sistema</strong>: Sí / No</li>
+          <li><strong>Sexo, empleado, supervisor</strong></li>
+          <li><strong>Tipo</strong>: Interno (empleado) o Externo (cliente/proveedor)</li>
+          <li><strong>Contraseña</strong>: debe tener al menos 12 caracteres</li>
+        </ul>
+        <p>La <strong>lista de usuarios y grupos</strong> muestra todos los usuarios creados con su login, tipo y fecha de creación. En la pestaña <strong>Permisos</strong> se puede ver y modificar qué acciones puede realizar cada usuario en cada módulo.</p>
+        <img src="../img/seg_02_usuarios_permisos.png" alt="Lista de usuarios del sistema con AYMANE OURHZIF y SuperAdmin, y pestaña de permisos del usuario mostrando los permisos del módulo Usuarios y grupos" class="foto-seccion" />
+      </div>
+
+      <div class="caja-texto">
+        <h2>👥 Grupos de usuarios</h2>
+        <p>Los grupos permiten asignar permisos a varios usuarios a la vez. En el ejemplo se crean los grupos <strong>técnicos</strong> y <strong>administrativos</strong>. Para crear un grupo nuevo se accede a <strong>Usuarios y grupos → Nuevo grupo</strong> y se escribe el nombre.</p>
+        <p>En la pestaña <strong>Permisos de grupo</strong> se activan o desactivan los permisos que tendrán todos los miembros del grupo. Por ejemplo, el grupo "técnicos" puede tener permiso para consultar usuarios pero no para crear/modificar otros usuarios ni cambiar contraseñas.</p>
+        <img src="../img/seg_03_nuevo_grupo.png" alt="Pestaña de permisos del usuario y formulario de creación de nuevo grupo llamado técnicos con botón Crear el grupo" class="foto-seccion" />
+      </div>
+
+      <div class="caja-texto">
+        <h2>🗂️ Permisos detallados por módulo</h2>
+        <p>En la vista de <strong>Permisos de grupo</strong> se ven todos los permisos disponibles organizados por módulo. Cada permiso se puede activar o dejar desactivado de forma individual. Para el grupo <strong>técnicos</strong> los permisos del módulo "Usuarios y grupos" están todos desactivados (interruptores en gris), mientras que para <strong>Terceros</strong> se pueden activar permisos de consulta, creación o eliminación.</p>
+        <img src="../img/seg_04_permisos_grupo.png" alt="Vista de permisos del grupo técnicos con todos los interruptores desactivados para el módulo Usuarios y grupos y permisos de Terceros" class="foto-seccion" />
+      </div>
+
+      <div class="caja-texto">
+        <h2>⚙️ Configuración de seguridad del sistema</h2>
+        <p>En <strong>Configuración → Seguridad</strong> se encuentran parámetros avanzados del sistema organizados en varias pestañas:</p>
+
+        <div class="rol-card administrador">
+          <h4>🔒 Miscelánea</h4>
+          <p>Timeout de sesiones (1800 segundos por defecto), número máximo de imágenes en formularios, máximo de publicaciones por IP al mes (200), máximo de archivos por formulario (10) y número máximo de intentos de login fallidos (100).</p>
+        </div>
+        <div class="rol-card directivo">
+          <h4>🔑 Contraseñas</h4>
+          <p>Longitud mínima y complejidad exigida. En el ejemplo se ve el aviso de que "Su contraseña debe contener al menos 12 caracteres".</p>
+        </div>
+        <div class="rol-card empleado">
+          <h4>📁 Archivos</h4>
+          <p>Control sobre qué archivos se pueden enviar o descargar desde el sistema.</p>
+        </div>
+        <div class="rol-card cliente">
+          <h4>🌐 Acceso externo/Internet</h4>
+          <p>Parámetros para controlar el acceso desde fuera de la red local.</p>
+        </div>
+
+        <img src="../img/seg_05_admin_seguridad.png" alt="Grupo administrativos sin usuarios asignados y panel de configuración de seguridad con pestañas Miscelánea, Captcha, Contraseñas, Archivos y parámetros como timeout de sesión y máximo de autenticaciones fallidas" class="foto-seccion" />
+      </div>
+
+      <div class="caja-texto">
+        <h2>✅ Buenas prácticas de seguridad en Dolibarr</h2>
+        <ul>
+          <li>Contraseñas de <strong>mínimo 12 caracteres</strong> con letras, números y símbolos.</li>
+          <li>Aplicar el principio de <strong>mínimo privilegio</strong>: cada usuario solo accede a lo necesario.</li>
+          <li>Usar <strong>grupos</strong> para gestionar permisos de forma eficiente.</li>
+          <li>Revisar periódicamente los usuarios activos y eliminar los de exempleados.</li>
+          <li>Configurar un <strong>timeout de sesión</strong> razonable (30 minutos en entornos compartidos).</li>
+          <li>Limitar los intentos de login fallidos para evitar ataques de fuerza bruta.</li>
+          <li>En producción, instalar un <strong>certificado SSL</strong> para usar HTTPS.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>Trabajo de SGE <span id="anio"></span></p><a href="https://nichjhdgh.github.io/sge-trabajo/"><p>Github</p></a>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

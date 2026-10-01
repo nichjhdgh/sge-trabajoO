@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administración – SGE Wiki</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">📊 <span>SGE</span> Wiki</a>
+      <button class="hamburguesa" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="que-es-sge.html">¿Qué es un SGE?</a></li>
+        <li><a href="instalacion.html">Instalación</a></li>
+        <li><a href="administracion.html">Administración</a></li>
+        <li><a href="seguridad.html">Seguridad</a></li>
+        <li><a href="informes.html">Informes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="../index.html">Inicio</a>
+      <span>›</span>
+      Administración y Configuración
+    </div>
+  </div>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>⚙️ Administración y Configuración</h1>
+      <p>Primeros pasos tras la instalación: acceso, empresa y módulos en Dolibarr</p>
+    </div>
+  </div>
+
+  <section class="seccion">
+    <div class="container">
+
+      <div class="caja-texto">
+        <h2>🔑 Primer acceso a Dolibarr</h2>
+        <p>Una vez instalado, abrimos el navegador y accedemos a <code>http://localhost/dolibarr</code>. La pantalla de login de Dolibarr pide el usuario y la contraseña que definimos durante la instalación:</p>
+        <ul>
+          <li>Usuario: <code>admin</code></li>
+          <li>Contraseña: la que pusimos en el instalador</li>
+        </ul>
+        <p>Tras iniciar sesión, Dolibarr nos lleva directamente al <strong>panel de configuración</strong> de la empresa/organización, donde hay que rellenar los datos básicos antes de empezar a usar el sistema.</p>
+        <img src="../img/admin_01_login_config.png" alt="Pantalla de login de Dolibarr con usuario admin y contraseña, y panel de configuración de empresa con menú lateral de ajustes" class="foto-seccion" />
+      </div>
+
+      <div class="caja-texto">
+        <h2>🏢 Configuración de la empresa</h2>
+        <p>En <strong>Configuración → Empresa/Organización</strong> introducimos todos los datos de la empresa que aparecerán en los documentos generados (facturas, presupuestos, albaranes...):</p>
+        <ul>
+          <li><strong>Razón social</strong>: nombre de la empresa</li>
+          <li><strong>Divisa principal</strong>: Euros (€)</li>
+          <li><strong>País</strong>: España (ES)</li>
+          <li>Dirección, código postal, población, provincia</li>
+          <li>Teléfono fijo y móvil</li>
+        </ul>
+        <p>Una vez rellenados los campos, pulsamos <strong>Grabar</strong> y el sistema confirma <em>"Configuración guardada"</em>. A continuación se ve la página de módulos disponibles, organizada por categorías: <strong>Gestión de RRHH</strong> (usuarios, días libres, nóminas...) y <strong>CRM</strong> (terceros, presupuestos, pedidos, expediciones...).</p>
+        <img src="../img/admin_02_empresa_mods.png" alt="Formulario de empresa/organización guardado con datos de la empresa y vista de módulos disponibles HR y CRM con sus interruptores de activación" class="foto-seccion" />
+      </div>
+
+      <div class="caja-texto">
+        <h2>🔌 Activación de módulos</h2>
+        <p>Dolibarr funciona por módulos que se activan o desactivan con un interruptor. Solo se habilitan los que la empresa necesita. Las categorías principales son:</p>
+        <div class="tabla-wrapper">
+          <table>
+            <thead><tr><th>Categoría</th><th>Módulos destacados</th></tr></thead>
+            <tbody>
+              <tr><td>Gestión de RRHH</td><td>Usuarios y grupos, Días libres, Informe de gastos, Contratación, RRHH</td></tr>
+              <tr><td>CRM (clientes)</td><td>Terceros, Presupuestos, Pedidos, Expediciones, Contratos, Tickets</td></tr>
+              <tr><td>VRM (proveedores)</td><td>Proveedores, Presupuestos de proveedor, Recepciones, Incoterms</td></tr>
+              <tr><td>Financiero</td><td>Facturación, Contabilidad, Bancos/Cajas</td></tr>
+              <tr><td>Inventario</td><td>Productos, Almacenes, Movimientos de stock</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="alerta-info">
+          💡 Los módulos marcados con el engranaje ⚙️ ya están activos. Los que tienen el interruptor apagado se pueden activar haciendo clic en él.
+        </div>
+      </div>
+
+      <div class="caja-texto">
+        <h2>📋 Resumen de tareas de administración</h2>
+        <div class="pasos">
+          <div class="paso"><div class="paso-numero">1</div><div class="paso-contenido"><h4>Iniciar sesión como admin</h4><p>Acceder a localhost/dolibarr con las credenciales creadas en la instalación.</p></div></div>
+          <div class="paso"><div class="paso-numero">2</div><div class="paso-contenido"><h4>Configurar la empresa</h4><p>Rellenar razón social, divisa, país, dirección y teléfonos en Configuración → Empresa.</p></div></div>
+          <div class="paso"><div class="paso-numero">3</div><div class="paso-contenido"><h4>Activar los módulos necesarios</h4><p>Ir a Configuración → Módulos y activar solo los que se vayan a usar.</p></div></div>
+          <div class="paso"><div class="paso-numero">4</div><div class="paso-contenido"><h4>Crear usuarios</h4><p>Desde Herramientas de administración → Usuarios y grupos → Nuevo usuario.</p></div></div>
+          <div class="paso"><div class="paso-numero">5</div><div class="paso-contenido"><h4>Configurar cada módulo</h4><p>Acceder a la configuración específica de cada módulo activo para ajustar opciones.</p></div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>Trabajo de SGE <span id="anio"></span></p><a href="https://nichjhdgh.github.io/sge-trabajo/"><p>Github</p></a>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

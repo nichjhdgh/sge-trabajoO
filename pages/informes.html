@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informes y Exportación – SGE Wiki</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">📊 <span>SGE</span> Wiki</a>
+      <button class="hamburguesa" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="que-es-sge.html">¿Qué es un SGE?</a></li>
+        <li><a href="instalacion.html">Instalación</a></li>
+        <li><a href="administracion.html">Administración</a></li>
+        <li><a href="seguridad.html">Seguridad</a></li>
+        <li><a href="informes.html">Informes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="../index.html">Inicio</a>
+      <span>›</span>
+      Informes y Exportación
+    </div>
+  </div>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>📄 Informes y Exportación de Datos</h1>
+      <p>Cómo generar informes y exportar información en Dolibarr</p>
+    </div>
+  </div>
+
+  <section class="seccion">
+    <div class="container">
+
+      <div class="caja-texto">
+        <h2>📊 Informes en Dolibarr</h2>
+        <p>Dolibarr permite generar informes de dos tipos: documentos en PDF (facturas, presupuestos, albaranes...) y listados exportables en Excel o CSV con datos de clientes, productos, pedidos, etc.</p>
+        <p>Los informes son muy útiles para llevar un control del negocio: saber cuánto se ha facturado en un mes, qué productos tienen poco stock, cuántos pedidos hay pendientes, etc.</p>
+
+        <div class="alerta-info">
+          💡 Para acceder a los informes hay que tener el módulo correspondiente activado y tener permisos de lectura sobre ese módulo.
+        </div>
+      </div>
+
+      
+
+      <div class="caja-texto">
+        <h2>📋 Tipos de informes disponibles</h2>
+        <div class="tabla-wrapper">
+          <table>
+            <thead>
+              <tr><th>Módulo</th><th>Informes disponibles</th><th>Formato</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Facturación</td><td>Facturas emitidas, facturas pendientes, resumen por cliente</td><td>PDF / Excel</td></tr>
+              <tr><td>Presupuestos</td><td>Presupuestos enviados, aceptados, rechazados</td><td>PDF / Excel</td></tr>
+              <tr><td>Almacén</td><td>Stock actual, movimientos, productos bajo mínimo</td><td>PDF / Excel</td></tr>
+              <tr><td>Terceros (clientes)</td><td>Listado de clientes, ficha de cliente</td><td>PDF / Excel / CSV</td></tr>
+              <tr><td>RRHH</td><td>Informe de gastos, días libres solicitados</td><td>PDF</td></tr>
+              <tr><td>Contabilidad</td><td>Balance, cuenta de resultados, libro diario</td><td>PDF / Excel</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="caja-texto">
+        <h2>📤 Exportar información</h2>
+        <p>Dolibarr tiene una herramienta de exportación que permite sacar cualquier listado de datos en formato Excel o CSV para trabajar con ellos en otros programas.</p>
+        <p>Se accede desde <strong>Utilidades → Exportar</strong>. Desde ahí se elige el tipo de datos a exportar (clientes, facturas, productos...) y los campos que queremos incluir.</p>
+
+        <div class="pasos">
+          <div class="paso">
+            <div class="paso-numero">1</div>
+            <div class="paso-contenido">
+              <h4>Ir a Utilidades → Exportar</h4>
+              <p>En el menú principal de Dolibarr, acceder a la sección de exportación.</p>
+            </div>
+          </div>
+          <div class="paso">
+            <div class="paso-numero">2</div>
+            <div class="paso-contenido">
+              <h4>Elegir el tipo de datos</h4>
+              <p>Seleccionar qué queremos exportar: clientes, facturas, productos, pedidos...</p>
+            </div>
+          </div>
+          <div class="paso">
+            <div class="paso-numero">3</div>
+            <div class="paso-contenido">
+              <h4>Seleccionar los campos</h4>
+              <p>Elegir qué columnas queremos que aparezcan en el archivo exportado.</p>
+            </div>
+          </div>
+          <div class="paso">
+            <div class="paso-numero">4</div>
+            <div class="paso-contenido">
+              <h4>Aplicar filtros (opcional)</h4>
+              <p>Filtrar por fechas, por estado, por cliente, etc. para exportar solo los datos que interesan.</p>
+            </div>
+          </div>
+          <div class="paso">
+            <div class="paso-numero">5</div>
+            <div class="paso-contenido">
+              <h4>Descargar el archivo</h4>
+              <p>Elegir el formato (Excel o CSV) y descargar el archivo al ordenador.</p>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="caja-texto">
+        <h2>📥 Importar datos</h2>
+        <p>Dolibarr también permite importar datos desde un archivo CSV o Excel. Esto es muy útil cuando se migra de otro sistema y hay que cargar los clientes, productos o el histórico de facturas.</p>
+        <p>Se accede desde <strong>Utilidades → Importar</strong>. El proceso es similar al de exportar: se elige el tipo de datos, se sube el archivo y Dolibarr intenta hacer la correspondencia entre las columnas del archivo y los campos del sistema.</p>
+        <div class="alerta-info">
+           Antes de importar datos en producción es recomendable hacer una prueba con pocos registros para verificar que los campos se mapean correctamente.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>Trabajo de SGE<span id="anio"></span></p><a href="https://nichjhdgh.github.io/sge-trabajo/"><p>Github</p></a>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

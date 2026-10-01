@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instalación de Dolibarr – SGE Wiki</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">📊 <span>SGE</span> Wiki</a>
+      <button class="hamburguesa" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="que-es-sge.html">¿Qué es un SGE?</a></li>
+        <li><a href="instalacion.html">Instalación</a></li>
+        <li><a href="administracion.html">Administración</a></li>
+        <li><a href="seguridad.html">Seguridad</a></li>
+        <li><a href="informes.html">Informes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="../index.html">Inicio</a>
+      <span>›</span>
+      Instalación
+    </div>
+  </div>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>💿 Instalación de Dolibarr con DoliWamp</h1>
+      <p>Proceso completo de instalación del ERP/CRM Dolibarr en Windows mediante DoliWamp</p>
+    </div>
+  </div>
+
+  <section class="seccion">
+    <div class="container">
+
+      <div class="caja-texto">
+        <h2>🔵 ¿Qué es Dolibarr?</h2>
+        <p><strong>Dolibarr ERP/CRM</strong> es un sistema de gestión empresarial de código abierto orientado a pequeñas y medianas empresas. Incluye módulos de gestión de clientes, proveedores, facturación, inventario, contabilidad, recursos humanos y mucho más.</p>
+        <p>Para instalarlo fácilmente en Windows usamos <strong>DoliWamp</strong>, un paquete todo-en-uno que incluye Apache, MariaDB y Dolibarr preconfigurados.</p>
+        <div class="alerta-info">
+          💡 <strong>DoliWamp</strong> se descarga gratis desde SourceForge: <em>sourceforge.net/projects/doliwamp</em>
+        </div>
+      </div>
+
+      <div class="caja-texto">
+        <h2>🖥️ Requisitos del sistema</h2>
+        <div class="tabla-wrapper">
+          <table>
+            <thead><tr><th>Componente</th><th>Requerimiento</th></tr></thead>
+            <tbody>
+              <tr><td>Sistema operativo</td><td>Windows 10 / 11 (64 bits)</td></tr>
+              <tr><td>Espacio en disco</td><td>Mínimo 600 MB libres</td></tr>
+              <tr><td>RAM</td><td>2 GB mínimo (recomendado 4 GB)</td></tr>
+              <tr><td>Navegador</td><td>Chrome, Firefox o Edge actualizados</td></tr>
+              <tr><td>Permisos</td><td>Administrador del sistema</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PASO 1 -->
+      <div class="caja-texto">
+        <h2>Paso 1 – Descargar DoliWamp</h2>
+        <p>Accedemos a SourceForge y descargamos el instalador de <strong>DoliWamp</strong> (incluye Dolibarr ERP/CRM). En la misma página podemos ver la descripción del proyecto y los colaboradores del software libre.</p>
+        <p>El instalador ocupa unos 600 MB y se descarga como un archivo <code>.exe</code>. Al ejecutarlo, lo primero que pide es elegir la carpeta de instalación (por defecto <code>c:\dolibarr</code>).</p>
+        <img src="../img/inst_01_descarga.png" alt="Web de descarga de DoliWamp en SourceForge y ventana de selección de carpeta de instalación" class="foto-seccion" />
+      </div>
+
+      <!-- PASO 2 -->
+      <div class="caja-texto">
+        <h2>Paso 2 – Confirmar la instalación</h2>
+        <p>El asistente muestra un resumen con la carpeta de destino elegida (<code>c:\dolibarr</code>) y las tareas adicionales, como crear un icono en el escritorio. Hacemos clic en <strong>Instalar</strong> para continuar.</p>
+        <img src="../img/inst_02_listo.png" alt="Pantalla 'Listo para instalar' con resumen de opciones seleccionadas" class="foto-seccion" />
+      </div>
+
+      <!-- PASO 3 -->
+      <div class="caja-texto">
+        <h2>Paso 3 – Proceso de instalación</h2>
+        <p>El instalador extrae todos los archivos necesarios: Apache, MariaDB (base de datos) y Dolibarr. La barra de progreso muestra el avance. Este proceso puede tardar varios minutos dependiendo del ordenador.</p>
+        <img src="../img/inst_03_progreso.png" alt="Barra de progreso durante la extracción de archivos de DoliWamp incluyendo MariaDB" class="foto-seccion" />
+      </div>
+
+      <!-- PASO 4 -->
+      <div class="caja-texto">
+        <h2>Paso 4 – Configurar parámetros técnicos</h2>
+        <p>Al finalizar la extracción, el instalador pide los <strong>parámetros técnicos</strong> del servidor. En una instalación nueva se pueden dejar los valores por defecto:</p>
+        <ul>
+          <li>Servidor SMTP: <code>localhost</code></li>
+          <li>Puerto Apache: <code>80</code></li>
+          <li>Puerto MySQL/MariaDB: <code>3306</code></li>
+          <li>Contraseña root de la base de datos (dejar en blanco en local)</li>
+        </ul>
+        <img src="../img/inst_04_parametros.png" alt="Formulario de parámetros técnicos del instalador: SMTP, puerto Apache, puerto MySQL y contraseña root" class="foto-seccion" />
+      </div>
+
+      <!-- PASO 5 -->
+      <div class="caja-texto">
+        <h2>Paso 5 – Finalizar la instalación y configurar Dolibarr</h2>
+        <p>El instalador muestra la pantalla de <strong>"Completando la instalación de DoliWamp"</strong> y lanza automáticamente el navegador con el asistente web de Dolibarr. Desde ahí se configura la base de datos:</p>
+        <ul>
+          <li>Conexión al servidor: <code>localhost</code></li>
+          <li>Nombre de la base de datos: <code>dolibarr</code></li>
+          <li>Se crean las tablas, índices, claves y funciones automáticamente ✅</li>
+        </ul>
+        <p>Tras la creación de la base de datos, se define el <strong>usuario administrador</strong>: login <code>admin</code> y una contraseña segura. Después de confirmar, Dolibarr indica que el administrador ha sido creado correctamente y ofrece el enlace para acceder al área de configuración.</p>
+        <img src="../img/inst_05_completa.png" alt="Pantalla final del instalador DoliWamp con opción de lanzar Dolibarr, y web con creación de objetos de la base de datos" class="foto-seccion" />
+        <img src="../img/inst_06_bbdd_admin.png" alt="Creación de la base de datos con todas las verificaciones en verde, formulario de cuenta administrador y confirmación de instalación completada" class="foto-seccion" style="margin-top:1rem" />
+      </div>
+
+      <!-- RESUMEN -->
+      <div class="caja-texto">
+        <h2>📋 Resumen del proceso</h2>
+        <div class="pasos">
+          <div class="paso"><div class="paso-numero">1</div><div class="paso-contenido"><h4>Descargar DoliWamp</h4><p>Desde SourceForge, descargar el instalador .exe de DoliWamp (≈600 MB).</p></div></div>
+          <div class="paso"><div class="paso-numero">2</div><div class="paso-contenido"><h4>Elegir carpeta y confirmar</h4><p>Seleccionar la carpeta de instalación (por defecto c:\dolibarr) y pulsar Instalar.</p></div></div>
+          <div class="paso"><div class="paso-numero">3</div><div class="paso-contenido"><h4>Esperar la extracción</h4><p>El instalador extrae Apache, MariaDB y Dolibarr. Puede tardar varios minutos.</p></div></div>
+          <div class="paso"><div class="paso-numero">4</div><div class="paso-contenido"><h4>Configurar parámetros</h4><p>Dejar los valores por defecto (localhost, puerto 80, puerto 3306).</p></div></div>
+          <div class="paso"><div class="paso-numero">5</div><div class="paso-contenido"><h4>Crear base de datos y administrador</h4><p>El navegador abre el asistente web. Crear la BBDD y definir el usuario admin con contraseña segura.</p></div></div>
+          <div class="paso"><div class="paso-numero">6</div><div class="paso-contenido"><h4>Acceder a Dolibarr</h4><p>Abrir <code>http://localhost/dolibarr</code> e iniciar sesión con el usuario admin creado.</p></div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>Trabajo de SGE <span id="anio"></span></p><a href="https://nichjhdgh.github.io/sge-trabajo/"><p>Github</p></a>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
